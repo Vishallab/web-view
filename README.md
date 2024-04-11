@@ -1,6 +1,6 @@
 Disclaimer: This is a sample code provided for educational purposes. Make sure to test thoroughly and adapt it to your specific requirements before using it in production environments.
 
-# Android-Webview-App
+# Webview
 This Android application demonstrates how to use a WebView to display web content, and manage network connectivity.
 
 ## Features
