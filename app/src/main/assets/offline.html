@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Mode</title>
+    <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1E1E1E; /* Dark background */
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #1E1E1E; /* Dark background */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  .particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: #E71D36; /* Red */
+    border-radius: 50%;
+    animation: moveParticleDiagonal 2.2s linear infinite alternate, glow .5s ease-in-out infinite alternate;
+  }
+
+  @keyframes moveParticleDiagonal {
+    0% {
+      transform: translate(-50%, -50%) translateX(100px) translateY(50px);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateX(-100px) translateY(-50px);
+    }
+  }
+
+  .particle-outer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-color: #F9C80E; /* Yellow */
+    border-radius: 50%;
+    animation: moveParticleCircle 4s linear infinite;
+  }
+
+  @keyframes moveParticleCircle {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(150px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) translateX(150px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .text {
+    position: absolute;
+    top: calc(50% + 80px); /* Adjust vertical position */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #ffffff; /* White */
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #ffffff; /* White */
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: heartbeat 1.5s infinite alternate;
+  }
+
+  @keyframes heartbeat {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="particle"></div>
+    <div class="particle-outer"></div>
+</div>
+<div class="text">Oops! You're offline.<br>Please check your internet connection.</div>
+<footer>Made with ❤ by Vishal Mishra</footer>
+</body>
+</html>
